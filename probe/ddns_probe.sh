@@ -4,7 +4,7 @@
 # Make sure to have valid secret
 SERVER=nsupdate.fedcloud.eu
 HOST="probe.test.fedcloud.eu"
-SECRET=HRmBhWEE23
+SECRET=ZGqEhtV7Hx
 
 # Usage info
 show_help() {
@@ -81,12 +81,12 @@ if (($return_code == 0)); then
         exit 3
     fi
 elif (($return_code == 7)); then
-        echo "CRITICAL - Server unreachable. Return code : $return_code"
+        echo "CRITICAL - Server unreachable. Return code : $return_code. Return value : $return_value"
         exit 2
 elif (($return_code == 6)); then
-        echo "CRITICAL - DNS error. Return code : $return_code"
+        echo "CRITICAL - DNS error. Return code : $return_code. Return value : $return_value"
         exit 2
 else
-        echo "UNKNOWN - Return code : $return_code"
+        echo "UNKNOWN - Return code : $return_code. Return value : $return_value"
         exit 3
 fi
