@@ -6,6 +6,13 @@ SERVER=nsupdate.fedcloud.eu
 HOST="probe.test.fedcloud.eu"
 SECRET=ZGqEhtV7Hx
 
+
+# Timeout value is given for compatibility
+# The probe should finish within second, so not real use
+
+TIMEOUT=100
+
+
 # Usage info
 show_help() {
 cat << EOF
@@ -20,6 +27,7 @@ Optional arguments:
 					Full FQDN of Dynamic DNS server
 	--probe-hostname PROBE_HOSTNAME	Registered hostname for probe test
 	--probe-secret PROBE_SECRET	Corresponding secret for probe hostname
+	-t TIMEOUT, --timeout TIMEOUT	Global timeout for probe test
 EOF
 }
 
@@ -42,6 +50,11 @@ case $key in
     ;;
     --probe-secret)
     SECRET="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    -t|--timeout)
+    TIMEOUT="$2"
     shift # past argument
     shift # past value
     ;;

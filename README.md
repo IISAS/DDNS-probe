@@ -29,8 +29,8 @@ service is down)
 - CRITICAL - DNS error. Return code : $return_code (in the case of wrong 
 server name or DNS error)
 
-Other errors are classified as UNKNOWN and will be classified if more details
-are given.
+Other errors, if exist, are classified as UNKNOWN and will be classified 
+later when more details of the tests are obtained and analyzed.
 
 ## Usage
 
@@ -46,6 +46,7 @@ Optional arguments:
                                         Full FQDN of Dynamic DNS server
         --probe-hostname PROBE_HOSTNAME Registered hostname for probe test
         --probe-secret PROBE_SECRET     Corresponding secret for probe hostname
+        -t TIMEOUT, --timeout TIMEOUT   Global timeout for probe test
 ```
 
 ## Examples
