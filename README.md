@@ -42,9 +42,9 @@ Nagios probe test for Dynamic DNS service
 
 Optional arguments:
         -h, --help, help                Display this help message and exit
-        -H DDNS-SERVER, --hostname DDNS-SERVER
+        -H DDNS_SERVER, --hostname DDNS_SERVER
                                         Full FQDN of Dynamic DNS server
-        --probe-host PROBE-HOST         Registered hostname for probe test
+        --probe-hostname PROBE_HOSTNAME Registered hostname for probe test
         --probe-secret PROBE_SECRET     Corresponding secret for probe hostname
 ```
 
