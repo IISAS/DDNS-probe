@@ -9,10 +9,10 @@ address of Nagios server. The probe hostname must be registered in the
 Dynamic DNS server in advance, and the corresponding secret for the hostname 
 must be provided via command-line option together with the hostname
 
-If the Dynamic DNS is working, the probe will give one of the following 
-messages and finish with exit code 0 (OK):
+If the Dynamic DNS service is working, the probe will give one of the 
+following messages and finish with exit code 0 (OK):
 
-- OK - IP address not changed (in the case, previous  IP address is the same
+- OK - IP address not changed (in the case previous  IP address is the same
 as updated)
 
 - OK - IP address successfully updated
@@ -30,7 +30,7 @@ service is down)
 server name or DNS error)
 
 Other errors, if exist, are classified as UNKNOWN and will be classified 
-later when more details of the tests are obtained and analyzed.
+later when more details of the probe tests are obtained and analyzed.
 
 ## Usage
 
@@ -54,7 +54,7 @@ Optional arguments:
 - Making probe test with default values for Dynamic DNS server and probe host/secret
 
 ```
-$ ddns_probe.sh
+$ ./ddns_probe.sh
 OK - IP address successfully updated
 ```
 

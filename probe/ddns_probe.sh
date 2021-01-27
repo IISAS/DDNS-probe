@@ -4,11 +4,11 @@
 # Make sure to have valid secret
 SERVER=nsupdate.fedcloud.eu
 HOST="probe.test.fedcloud.eu"
-SECRET=ZGqEhtV7Hx
+SECRET=tap79xSvQy
 
 
 # Timeout value is given for compatibility
-# The probe should finish within second, so not real use
+# The probe should finish within few seconds, so not real use
 
 TIMEOUT=100
 
