@@ -35,7 +35,7 @@ are given.
 ## Usage
 
 ```
-Usage: ddns_probe.sh [-h] [-H DDNS-SERVER] [--probe-host PROBE-HOST]
+Usage: ddns_probe.sh [-h] [-H DDNS_SERVER] [--probe-hostname PROBE_HOST]
                      [--probe-secret PROBE_SECRET]
 
 Nagios probe test for Dynamic DNS service
