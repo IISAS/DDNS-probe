@@ -51,9 +51,10 @@ later when more details of the probe tests are obtained and analyzed.
 
 ## Usage
 
+
 ```
-Usage: ddns_probe.sh [-h] [-H DDNS_SERVER] [--probe-hostname PROBE_HOST]
-                     [--probe-secret PROBE_SECRET]
+Usage: ddns_probe.sh [-h] [--endpoint-name ENDPOINT_NAME] [-H SERVER] 
+                     [--probe-hostname PROBE_HOST] [--probe-secret PROBE_SECRET]
 
 Nagios probe test for Dynamic DNS service
 
@@ -69,16 +70,19 @@ Optional arguments:
 
 ## Examples
 
-- Making probe test with default values for Dynamic DNS server and probe host/secret
+
+- Making probe test of Dynamic DNS server
+
 
 ```
-$ ./ddns_probe.sh
-OK - IP address successfully updated
-```
-
-- Making probe test with all parameters
-
-```
-$ ./ddns_probe.sh -H nsupdate.fedcloud.eu --probe-hostname probe.test.fedcloud.eu --probe-secret XXXXXX
+$ ./ddns_probe.sh --endpoint-name nsupdate -H nsupdate.fedcloud.eu --probe-hostname probe.test.fedcloud.eu --probe-secret XXXXXX
 OK - IP address not changed
+```
 
+- Making probe test for DNS server
+
+
+```
+$ ./ddns_probe.sh --endpoint-name primary --hostname dns1.cloud.egi.eu --probe-hostname probe.test.fedcloud.eu
+OK - DNS server responded. Return value: 147.213.65.175
+```

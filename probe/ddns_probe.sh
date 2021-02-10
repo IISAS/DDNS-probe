@@ -2,10 +2,10 @@
 
 # Default values for Dynamic DNS server, hostname and secret
 # Make sure to have valid secret
-SERVER=nsupdate.fedcloud.eu
+SERVER=UNKNOWN
 HOST="probe.test.fedcloud.eu"
 SECRET=DuUEu3YGbh
-ENDPOINT_NAME=nsupdate
+ENDPOINT_NAME=UNKNOWN
 
 # Timeout value is given for compatibility
 # The probe should finish within few seconds, so not real use
@@ -141,8 +141,19 @@ case $key in
 esac
 done
 
-if [[ $ENDPOINT_NAME = "nsupdate" ]]; then
+if [[ $SERVER == "UNKNOWN" || $ENDPOINT_NAME == "UNKNOWN" ]]; then
+    echo "Error: Endpoint name and server are required."
+    exit 1
+fi 
+ 
+
+if [[ $ENDPOINT_NAME == "nsupdate" ]]; then
     test_dynamic_dns
-else
+
+elif [[ $ENDPOINT_NAME == "primary" || $ENDPOINT_NAME == "secondary" ]]; then
     test_dns
+
+else 
+    echo "Error: Wrong endpoint name."
+    exit 1
 fi
