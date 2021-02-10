@@ -4,6 +4,11 @@ This is a script for monitoring status of Dynamic DNS service. The script
 should detect various possible issues of the service during operation and 
 give corresponding error or warning message
 
+
+## Probe test for Dynamic DNS service
+
+If the name of the service endpoint (given via "--endpoint-name" parameter)
+is "nsupdate", the probe will perform test for Dynamic DNS service.
 The probes will try to update IP address of the probe hostname to actual IP
 address of Nagios server. The probe hostname must be registered in the 
 Dynamic DNS server in advance, and the corresponding secret for the hostname 
@@ -32,6 +37,18 @@ server name or DNS error)
 Other errors, if exist, are classified as UNKNOWN and will be classified 
 later when more details of the probe tests are obtained and analyzed.
 
+## Probe test for DNS servers used by Dynamic DNS service
+
+If the name of the endpoint is other than "nsupdate", the probe will perform
+test for DNS server. It will try to get IP address of the probe hostname from 
+the DNS server via "dig" command. If the DNS server responds, the probe will
+print a message "OK - DNS server responded. Return value: IP address" and 
+finish with exit code 0 (OK). If the server does not respond, , the probe will 
+print the error message and return with exit code 2 (CRITICAL).
+
+Other errors, if exist, are classified as UNKNOWN and will be classified 
+later when more details of the probe tests are obtained and analyzed.
+
 ## Usage
 
 ```
@@ -42,11 +59,12 @@ Nagios probe test for Dynamic DNS service
 
 Optional arguments:
         -h, --help, help                Display this help message and exit
-        -H DDNS_SERVER, --hostname DDNS_SERVER
-                                        Full FQDN of Dynamic DNS server
+        --endpoint-name ENDPOINT_NAME   Endpoint name (as in GOCDB)
+        -H SERVER, --hostname SERVER    Hostname of server (endpoint URL in GOCDB)
         --probe-hostname PROBE_HOSTNAME Registered hostname for probe test
         --probe-secret PROBE_SECRET     Corresponding secret for probe hostname
         -t TIMEOUT, --timeout TIMEOUT   Global timeout for probe test
+
 ```
 
 ## Examples
