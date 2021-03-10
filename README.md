@@ -5,7 +5,7 @@ should detect various possible issues of the service during operation and
 give corresponding error or warning message.
 
 A short presentation of Dynamic DNS service and its probe test is available
-at [here](https://github.com/tdviet/DDNS-probe/raw/main/Dynamic%20DNS%20service%20-%20OMB.pdf).
+at [here](https://github.com/tdviet/DDNS-probe/blob/main/doc/Dynamic%20DNS%20service.pdf).
 
 ## Probe test for Dynamic DNS service
 
@@ -55,7 +55,7 @@ later when more details of the probe tests are obtained and analyzed.
 
 
 ```
-Usage: ddns_probe.sh [-h] [--endpoint-name ENDPOINT_NAME] [-H SERVER] 
+Usage: nagios-plugin-dynamic-dns.sh [-h] [--endpoint-name ENDPOINT_NAME] [-H SERVER] 
                      [--probe-hostname PROBE_HOST] [--probe-secret PROBE_SECRET]
 
 Nagios probe test for Dynamic DNS service
@@ -77,7 +77,7 @@ Optional arguments:
 
 
 ```
-$ ./ddns_probe.sh --endpoint-name nsupdate -H nsupdate.fedcloud.eu --probe-hostname probe.test.fedcloud.eu --probe-secret XXXXXX
+$ ./nagios-plugin-dynamic-dns.sh --endpoint-name nsupdate -H nsupdate.fedcloud.eu --probe-hostname probe.test.fedcloud.eu --probe-secret XXXXXX
 OK - IP address not changed
 ```
 
@@ -85,6 +85,6 @@ OK - IP address not changed
 
 
 ```
-$ ./ddns_probe.sh --endpoint-name secondary --hostname dns1.cloud.egi.eu --probe-hostname probe.test.fedcloud.eu
+$ ./nagios-plugin-dynamic-dns.sh --endpoint-name secondary --hostname dns1.cloud.egi.eu --probe-hostname probe.test.fedcloud.eu
 OK - DNS server responded. Return value: 147.213.65.175
 ```
