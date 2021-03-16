@@ -23,8 +23,8 @@ Nagios probe test for Dynamic DNS service
 
 Optional arguments:
 	-h, --help, help		Display this help message and exit
-	--endpoint-name ENDPOINT_NAME	Endpoint name (as in GOCDB)
-	-H SERVER, --hostname SERVER	Hostname of server (endpoint URL in GOCDB)
+	--endpoint-name ENDPOINT_NAME	Endpoint name (endpoint-name extension property in GOCDB)
+	-H SERVER, --hostname SERVER	Hostname of server (service hostname in GOCDB)
 	--probe-hostname PROBE_HOSTNAME	Registered hostname for probe test
 	--probe-secret PROBE_SECRET	Corresponding secret for probe hostname
 	-t TIMEOUT, --timeout TIMEOUT	Global timeout for probe test
