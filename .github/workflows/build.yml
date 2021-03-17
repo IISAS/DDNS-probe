@@ -28,7 +28,7 @@ jobs:
           name: rpms7
           path: |
             build/RPMS/noarch/nagios-plugin-dynamic-dns-*-1.noarch.rpm
-    centos7-install:
+  centos7-install:
     name: Install CentOS 7 rpms
     needs: centos7
     runs-on: ubuntu-latest
