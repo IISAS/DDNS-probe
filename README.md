@@ -2,7 +2,7 @@
 
 This is a script for monitoring status of Dynamic DNS service. The script 
 should detect various possible issues of the service during operation and 
-give corresponding error or warning message.
+give corresponding error or warning message. 
 
 A short presentation of Dynamic DNS service and its probe test is available
 at [here](https://github.com/tdviet/DDNS-probe/blob/main/doc/Dynamic%20DNS%20service.pdf).
