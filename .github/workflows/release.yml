@@ -24,7 +24,7 @@ jobs:
           make rpm
           rpmlint --file .rpmlint.ini build/RPMS/noarch/*.rpm
       - name: Upload rpms
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: rpms7
           path: |
